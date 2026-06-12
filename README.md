@@ -1,0 +1,2 @@
+# starguru
+website for starguruIT

@@ -1,0 +1,299 @@
+<div class="site-shell">
+  <header class="navbar">
+    <div class="container nav-row">
+      <a class="brand" href="#home"><span class="brand-mark"></span> StarGuru IT</a>
+      <nav class="nav-links">
+        <button class="theme-toggle" type="button" (click)="toggleTheme()">{{ theme === 'dark' ? '☀️ Light' : '🌙 Dark' }}</button>
+        <div class="nav-drop">
+          <a href="#about">About</a>
+          <div class="nav-menu">
+            <a href="#about">Our story</a>
+            <a href="#process">Delivery process</a>
+            <a href="#stories">Success stories</a>
+          </div>
+        </div>
+        <div class="nav-drop">
+          <a href="#services">Services</a>
+          <div class="nav-menu">
+            <a href="#services">Software & Apps</a>
+            <a href="#technology">Cloud & AI</a>
+            <a href="#contact">Consulting</a>
+          </div>
+        </div>
+        <div class="nav-drop">
+          <a href="#industries">Solutions</a>
+          <div class="nav-menu">
+            <a href="#industries">Healthcare</a>
+            <a href="#industries">Finance</a>
+            <a href="#industries">Retail & Manufacturing</a>
+          </div>
+        </div>
+        <div class="nav-drop">
+          <a href="#stories">Resources</a>
+          <div class="nav-menu">
+            <a href="#stories">Case studies</a>
+            <a href="#contact">Contact us</a>
+            <a href="#services">Careers</a>
+          </div>
+        </div>
+        <a class="cta-chip" href="#contact">Schedule Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="section hero-section">
+      <div class="container hero-grid">
+        <article class="hero-copy-card">
+          <p class="eyebrow">Enterprise IT Consulting • Software • AI • Cloud</p>
+          <h1 class="hero-title">Build intelligent platforms that help global enterprises move faster.</h1>
+          <p class="hero-copy">We design secure, scalable software, AI, and cloud solutions for ambitious organizations that need clarity, speed, and executive-grade delivery.</p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#contact">Schedule Consultation</a>
+            <a class="secondary-btn" href="#services">Explore Services</a>
+          </div>
+          <div class="chip-grid">
+            <span class="chip">Angular</span>
+            <span class="chip">React</span>
+            <span class="chip">.NET</span>
+            <span class="chip">Azure</span>
+            <span class="chip">AI & Automation</span>
+          </div>
+          <div class="mini-stat-grid">
+            <article class="mini-stat-card"><strong>100+</strong><span>Enterprise projects delivered</span></article>
+            <article class="mini-stat-card"><strong>8 yrs</strong><span>Delivery experience across sectors</span></article>
+            <article class="mini-stat-card"><strong>99%</strong><span>Client satisfaction benchmark</span></article>
+          </div>
+        </article>
+
+        <aside class="hero-panel-card">
+          <div class="panel-kicker">Industry Solution Panel</div>
+          <h2 class="panel-title">Choose the sector you want to modernize.</h2>
+          <p class="panel-copy">A focused overview of how we design secure, measurable solutions for regulated and growth-oriented businesses.</p>
+          <div class="industry-tabs" role="tablist" aria-label="Industry solutions">
+            <button type="button" class="industry-tab" *ngFor="let item of industries" [class.active]="item.name === activeIndustry.name" (click)="selectIndustry(item)">{{ item.name }}</button>
+          </div>
+          <article class="industry-focus-card">
+            <p class="focus-label">Selected focus</p>
+            <h3>{{ activeIndustry.name }}</h3>
+            <p>{{ activeIndustry.detail }}</p>
+          </article>
+          <div class="solution-pills">
+            <span class="solution-pill">Strategy & Roadmaps</span>
+            <span class="solution-pill">Cloud Platforms</span>
+            <span class="solution-pill">AI & Automation</span>
+            <span class="solution-pill">Enterprise Delivery</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <p class="eyebrow">About StarGuru IT</p>
+        <h2 class="section-title">A premium technology partner for enterprise growth.</h2>
+        <p class="section-copy">We blend innovation, engineering discipline, and executive consulting to deliver software ecosystems that are secure, scalable, and aligned to business goals.</p>
+        <div class="story-grid" style="grid-template-columns:repeat(2,1fr); margin-top:18px;">
+          <article class="story-card"><h3 class="card-title">Vision</h3><p class="card-copy">Create world-class digital products that help organizations thrive in an AI-first economy.</p></article>
+          <article class="story-card"><h3 class="card-title">Mission</h3><p class="card-copy">Deliver measurable innovation through expert engineering, strategic consulting, and reliable execution.</p></article>
+          <article class="story-card"><h3 class="card-title">Why Choose Us</h3><p class="card-copy">Senior practitioners, enterprise-grade delivery, transparent collaboration, and business-aligned outcomes.</p></article>
+          <article class="story-card"><h3 class="card-title">Company Story</h3><p class="card-copy">StarGuru IT was built to help ambitious companies modernize faster with premium consulting and product engineering.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <p class="eyebrow">Core Services</p>
+        <h2 class="section-title">Premium consulting and engineering services.</h2>
+        <p class="section-copy">Every engagement is designed to accelerate delivery, strengthen architecture, and maximize return on innovation investment.</p>
+        <div class="service-grid" style="margin-top:18px;">
+          <article class="service-card" *ngFor="let item of services">
+            <div class="card-icon">{{ item.icon }}</div>
+            <h3 class="card-title">{{ item.title }}</h3>
+            <p class="card-copy">{{ item.description }}</p>
+            <a href="#contact" style="display:inline-block; margin-top:10px; color:var(--accent); font-weight:700;">Learn More →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="technology" class="section">
+      <div class="container">
+        <p class="eyebrow">Technology Expertise</p>
+        <h2 class="section-title">Modern stacks, AI tooling, and cloud engineering.</h2>
+        <div class="tech-grid" style="margin-top:18px;">
+          <article class="tech-card" *ngFor="let group of techGroups">
+            <h3 class="card-title">{{ group.label }}</h3>
+            <div class="tag-list">
+              <span class="tag" *ngFor="let item of group.items">{{ item }}</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Industry Solutions</p>
+          <h2 class="section-title">Tailored delivery for regulated and high-growth sectors.</h2>
+          <p class="section-copy">Every solution is built with executive clarity, measurable outcomes, and enterprise-grade engineering standards.</p>
+        </div>
+        <div class="industry-grid" style="margin-top:18px;">
+          <article class="industry-card" *ngFor="let item of industries">
+            <span class="industry-icon">{{ item.name.charAt(0) }}</span>
+            <h3 class="card-title">{{ item.name }}</h3>
+            <p class="card-copy">{{ item.detail }}</p>
+            <span class="industry-footnote">Enterprise transformation</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Why Choose StarGuru IT</p>
+        <h2 class="section-title">Enterprise advantages that create lasting business value.</h2>
+        <div class="adv-grid" style="grid-template-columns:repeat(4,1fr); margin-top:18px;">
+          <article class="adv-card" *ngFor="let item of advantages">
+            <h3 class="card-title">{{ item.title }}</h3>
+            <p class="card-copy">{{ item.description }}</p>
+            <p style="color:var(--accent); font-size:.9rem; margin-top:8px;">{{ item.accent }}</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section">
+      <div class="container">
+        <p class="eyebrow">Development Process</p>
+        <h2 class="section-title">A disciplined workflow from strategy to support.</h2>
+        <div class="timeline" style="margin-top:18px;">
+          <article class="step-card" *ngFor="let step of process; let i=index">
+            <div class="step-number">Step {{ i + 1 }}</div>
+            <h3 class="step-title">{{ step.label }}</h3>
+            <p class="step-copy">{{ step.detail }}</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="stories" class="section">
+      <div class="container">
+        <p class="eyebrow">Success Stories</p>
+        <h2 class="section-title">Impactful engagements with measurable business outcomes.</h2>
+        <div class="case-grid" style="grid-template-columns:repeat(2,1fr); margin-top:18px;">
+          <article class="case-card" *ngFor="let study of caseStudies">
+            <h3 class="card-title">{{ study.client }}</h3>
+            <p class="card-copy"><strong>Challenge:</strong> {{ study.challenge }}</p>
+            <p class="card-copy"><strong>Solution:</strong> {{ study.solution }}</p>
+            <p class="card-copy"><strong>Impact:</strong> {{ study.impact }}</p>
+            <div class="tag-list"><span class="tag" *ngFor="let tech of study.stack">{{ tech }}</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="section-title">Frequently asked questions for enterprise buyers.</h2>
+        <div class="story-grid" style="grid-template-columns:repeat(3,1fr); margin-top:18px;">
+          <article class="story-card" *ngFor="let item of faqItems">
+            <h3 class="card-title">{{ item.question }}</h3>
+            <p class="card-copy">{{ item.answer }}</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Blog Preview</p>
+        <h2 class="section-title">Insights from our engineering and transformation teams.</h2>
+        <div class="service-grid" style="margin-top:18px;">
+          <article class="service-card" *ngFor="let post of blogPosts">
+            <div class="card-icon">📝</div>
+            <p style="color:var(--accent); font-size:.92rem; text-transform:uppercase; letter-spacing:.2em;">{{ post.tag }}</p>
+            <h3 class="card-title">{{ post.title }}</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Careers</p>
+        <h2 class="section-title">Join a team building the next wave of enterprise technology.</h2>
+        <div class="service-grid" style="margin-top:18px;">
+          <article class="service-card" *ngFor="let role of careers">
+            <h3 class="card-title">{{ role.role }}</h3>
+            <p class="card-copy">{{ role.type }}</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Client Testimonials</p>
+        <h2 class="section-title">Trusted by leaders who value execution and partnership.</h2>
+        <div class="testimonial-grid" style="grid-template-columns:repeat(3,1fr); margin-top:18px;">
+          <article class="testimonial-card" *ngFor="let item of testimonials">
+            <div style="color:#ffd66b;">★★★★★</div>
+            <p class="card-copy" style="margin-top:8px;">“{{ item.quote }}”</p>
+            <h3 class="card-title" style="margin-bottom:2px;">{{ item.name }}</h3>
+            <p style="color:var(--muted); font-size:.95rem;">{{ item.role }}</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Statistics</p>
+        <h2 class="section-title">Performance, growth, and client confidence at a glance.</h2>
+        <div class="stat-grid" style="margin-top:18px;">
+          <article class="stat-card"><div class="stat-number">100+</div><div class="card-copy">Projects</div></article>
+          <article class="stat-card"><div class="stat-number">50+</div><div class="card-copy">Clients</div></article>
+          <article class="stat-card"><div class="stat-number">25+</div><div class="card-copy">Experts</div></article>
+          <article class="stat-card"><div class="stat-number">99%</div><div class="card-copy">Client Satisfaction</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact-grid">
+        <article class="glass-card" style="padding:18px;">
+          <p class="eyebrow">Contact</p>
+          <h2 class="section-title">Let’s design your next enterprise platform.</h2>
+          <p class="section-copy">Contact Person: N Manasa<br/>Phone: +1123456789<br/>Email: <a href="mailto:abc@gmail.com" style="color:var(--accent);">abc@gmail.com</a></p>
+        </article>
+        <article class="glass-card" style="padding:18px;">
+          <form class="form-grid">
+            <label class="field"><span>Name</span><input type="text" placeholder="Your name"></label>
+            <label class="field"><span>Email</span><input type="email" placeholder="name@company.com"></label>
+            <label class="field"><span>Phone</span><input type="tel" placeholder="+1 123 456 789"></label>
+            <label class="field"><span>Company</span><input type="text" placeholder="Company name"></label>
+            <label class="field"><span>Service Required</span><select><option>Custom Development</option><option>AI & Automation</option><option>Cloud Engineering</option><option>Digital Transformation</option></select></label>
+            <label class="field full"><span>Message</span><textarea rows="4" placeholder="Tell us about your goals"></textarea></label>
+            <button class="primary-btn" type="button">Send Enquiry</button>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section" style="padding-top:10px;">
+    <div class="container footer-grid">
+      <article class="footer-col"><h4>Company Information</h4><p>StarGuru IT is a premium IT consulting, software development, and AI transformation company helping enterprises modernize with confidence.</p></article>
+      <article class="footer-col"><h4>Services</h4><ul><li>Custom Software</li><li>AI Solutions</li><li>Cloud & DevOps</li><li>Digital Transformation</li></ul></article>
+      <article class="footer-col"><h4>Technologies</h4><ul><li>Angular</li><li>.NET</li><li>Azure</li><li>OpenAI</li></ul></article>
+      <article class="footer-col"><h4>Quick Links</h4><ul><li>About</li><li>Case Studies</li><li>Testimonials</li><li>Contact</li></ul></article>
+      <article class="footer-col"><h4>Contact</h4><p>+1123456789<br/>abc@gmail.com<br/>Enterprise HQ</p></article>
+    </div>
+  </footer>
+
+  <button class="back-top" type="button" (click)="scrollToTop()">↑ Top</button>
+</div>

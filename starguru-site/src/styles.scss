@@ -1,0 +1,18 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: 'Inter', Arial, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(82, 130, 255, 0.08), transparent 20%),
+    linear-gradient(180deg, #040b16 0%, #07111f 45%, #02070d 100%);
+  color: #eff5ff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+::selection { background: rgba(125, 176, 255, 0.25); color: #fff; }
